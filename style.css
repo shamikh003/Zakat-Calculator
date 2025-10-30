@@ -1,0 +1,157 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=El+Messiri:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url("background.jpg") center/cover no-repeat fixed;
+    backdrop-filter: blur(4px);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+#unitControls {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+#unitNote {
+    display: block;
+    text-align: center;
+    color: #303030; /* aap change bhi kr sakte */
+    font-size: 14px;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 18px;
+    color: #000000;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    animation: fadeSlide 0.8s ease forwards;
+}
+
+/*  Islamic Heading Style */
+h2 {
+    font-family: 'El Messiri', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: black;
+    margin-bottom: 18px;
+}
+
+/*  Selection Cards */
+.option-card {
+    background: rgba(0,0,0,0.3);
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.25);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.option-card:hover {
+    background: rgba(71, 67, 8, 0.4);
+    transform: scale(1.03);
+}
+
+/*  Inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+}
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #edea26;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ffe15d;
+    transform: translateY(-3px);
+}
+
+/*  Reset Button */
+.reset-btn {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #f9e17b;
+    color: #f9e17b;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reset-btn:hover {
+    background: #f9e17b;
+    color: #000;
+}
+
+/*  Result Box */
+.result-box {
+    font-size: 20px;
+    margin-top: 15px;
+    background: rgba(0,0,0,0.35);
+    border-radius: 12px;
+    padding: 15px;
+    display: none;
+    animation: fadeSlide 0.7s ease;
+}
+
+/*  Slide Animation */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*  RESPONSIVE */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 22px;
+    }
+    .btn {
+        font-size: 16px;
+    }
+}

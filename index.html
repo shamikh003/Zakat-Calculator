@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zakat Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ✅ Step 1: Asset Selection -->
+  <div id="step1">
+    <h2>Select Asset Type</h2>
+    <div class="option-card" onclick="selectAsset('gold')">Gold</div>
+    <div class="option-card" onclick="selectAsset('silver')">Silver</div>
+    <div class="option-card" onclick="selectAsset('cash')">Cash</div>
+    <div class="option-card" onclick="selectAsset('other')">Other Assets</div>
+  </div>
+
+  <!-- ✅ Step 2: Input Fields (Hidden by default) -->
+  <div id="step2" style="display:none;">
+    <h2 id="assetTitle"></h2>
+
+    <!-- 🔹 Weight Input Box -->
+      <!-- 🔹 Weight Input Box -->
+<div id="weightInputBox">
+  <label id="weightLabel" for="weight">Enter the weight</label>
+  <input type="number" id="weight" placeholder="Enter Weight">
+
+  <!-- ✅ Keep your own unit controls (don’t let JS inject again) -->
+  <div id="unitControls" style="margin:8px 0; text-align:center;">
+    <label class="unitOption" style="margin-right:12px;">
+      <input type="radio" name="unit" value="tola" checked>
+      Tola (تولہ)
+    </label>
+    <label class="unitOption">
+      <input type="radio" name="unit" value="gram">
+      Gram (گرام)
+    </label>
+    <p id="unitNote" style="font-size:13px; color:#554b27;">
+      Note: If you choose <b>Tola</b>, enter rate per Tola.
+      (اگر تولہ منتخب کریں تو شرح فی تولہ درج کریں)
+    </p>
+  </div>
+</div>
+    <!-- 🔹 Rate Input Box -->
+    <div id="rateInputBox">
+      <input type="number" id="rate" placeholder="Enter Price Rate per Tola">
+
+      <!-- ✅ External Gold & Silver Price Links -->
+      <p style="font-size:13px; margin-top:5px;">
+        Don't know price?
+        <a href="https://gold.pk/" target="_blank" style="color:#554b27f9;">Check Rate</a>
+      </p>
+    </div>
+
+    <!-- 🔹 Cash Box -->
+    <input type="number" id="cashValue" placeholder="Enter Total Amount" style="display:none;">
+
+    <button class="btn" onclick="calculateZakat()">Calculate Zakat</button>
+    <button class="reset-btn" onclick="resetCalculator()">Back</button>
+  </div>
+
+  <!-- ✅ Step 3: Result -->
+  <div class="result-box" id="resultBox"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
