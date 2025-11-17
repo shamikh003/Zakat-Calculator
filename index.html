@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zakat Calculator</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div id="step1">
+    <h2>Select Asset Type</h2>
+    <div class="option-card" onclick="selectAsset('gold')">Gold</div>
+    <div class="option-card" onclick="selectAsset('silver')">Silver</div>
+    <div class="option-card" onclick="selectAsset('cash')">Cash</div>
+    <div class="option-card" onclick="selectAsset('other')">Other Assets</div>
+  </div>
+
+  
+  <div id="step2" style="display:none;">
+    <h2 id="assetTitle"></h2>
+
+    
+<div id="weightInputBox">
+  <label id="weightLabel" for="weight">Enter the weight</label>
+  <input type="number" id="weight" placeholder="Enter Weight">
+
+  
+  <div id="unitControls" style="margin:8px 0; text-align:center;">
+    <label class="unitOption" style="margin-right:12px;">
+      <input type="radio" name="unit" value="tola" checked>
+      Tola (تولہ)
+    </label>
+    <label class="unitOption">
+      <input type="radio" name="unit" value="gram">
+      Gram (گرام)
+    </label>
+    <p id="unitNote" style="font-size:13px; color:#554b27;">
+      Note: If you choose <b>Tola</b>, enter rate per Tola.
+      (اگر تولہ منتخب کریں تو شرح فی تولہ درج کریں)
+    </p>
+  </div>
+</div>
+  <div id="rateInputBox" style="display: block;">
+      <label id="rateLabel" for="rate" style="display: block; margin-bottom: 5px; text-align: left;">Rate</label>
+      <input type="number" id="rate" placeholder="Enter Price Rate">
+
+      <p id="goldLinkNote" style="display:none; font-size:13px; margin-top:5px;">
+        Rate maloom nahi?
+        <a href="https://gold.pk/" target="_blank" style="color:#554b27f9;">Check Gold Rate</a>
+      </p>
+
+      <p id="silverLinkNote" style="display:none; font-size:13px; margin-top:5px;">
+        Rate maloom nahi?
+        <a href="https://gold.pk/pakistan-silver-rates-xagp.php" target="_blank" style="color:#554b27f9;">Check Silver Rate</a>
+      </p>
+    </div>
+
+   
+    <input type="number" id="cashValue" placeholder="Enter Total Amount" style="display:none;">
+
+    <button class="btn" onclick="calculateZakat()">Calculate Zakat</button>
+    <button class="reset-btn" onclick="resetCalculator()"><b>Back</b></button> 
+  </div>
+
+
+  <div class="result-box" id="resultBox"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
